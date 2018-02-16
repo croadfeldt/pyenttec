@@ -14,8 +14,10 @@ _MAX_DMX_SIZE = 512
 
 _PACKET_END = _END_VAL.to_bytes(1, 'big')
 
-_port_directory = {'darwin': "/dev/",}
-_port_basenames = {'darwin': ["tty.usbserial"],}
+_port_directory = {'darwin': "/dev/",
+                   'linux': "/dev/",}
+_port_basenames = {'darwin': ["tty.usbserial"],
+                   'linux': ["ttyUSB0"],}
 
 def _item_is_port(item, platform):
     basenames = _port_basenames[platform]
